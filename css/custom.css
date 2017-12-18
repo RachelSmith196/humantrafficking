@@ -1,0 +1,99 @@
+section {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
+footer {
+	padding-top: 0px;
+	padding-bottom: 0px;
+    background-color: black;
+}
+
+footer a {
+    color: #b7b7b7;
+}
+
+footer a:hover {
+    color: #585451;
+}
+
+.copyright {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+nav {
+    max-width: inherit;
+}
+.nav-link {
+    color: #8d0d0d;
+}
+
+a.nav-link:hover {
+    color:#b7b7b7;
+}
+
+a.nav-link.active {
+    color:#585451;
+}
+
+.scroll-to-top {
+    z-index:1042;
+    right:1rem;
+    bottom:1rem;
+    display:auto;
+}
+.scroll-to-top a {
+    width:1.5rem;
+    height:1.5rem;
+    background-color:rgba(33,37,41,.5);
+}
+
+#mainNav {
+    padding-top:.5rem; 
+    padding-bottom:.5rem;
+    -webkit-transition:padding-top .1s, padding-bottom .1s;
+    -moz-transition:padding-top .1s, padding-bottom .1s;
+    transition:padding-top .1s, padding-bottom .1s;
+}
+
+#mainNav .navbar-brand {
+    font-size:1.5em;
+    -webkit-transition:font-size .1s;
+    -moz-transition:font-size .1s;
+    transition:font-size .1s;
+}
+
+#mainNav.navbar-nav {
+    margin-top:0;
+}
+
+@media (max-width:767px) {
+    .navbar-brand {
+        display:none;
+    } 
+}
+
+@media (min-width:100px) {
+    .carousel-caption {
+        display:contents;
+        padding-bottom: 5px;
+    }
+}
+
+#textback {
+    background-color: black;
+} 
+
+tr:first-child td {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #eee; /* Light grey */
+}
+
+hr {
+    margin: 20px;
+}

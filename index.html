@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Human Trafficking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+      
+    <!-- JavaScript ref -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#home">Human Trafficking</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#home">Home</a>
+            </li>
+             <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#type">Trafficking Types</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#history">History</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#victims">Testimonies</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#signs">Warning Signs</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <br>
+      <br>
+<!-- Home Section -->
+      <section class="home" id="home">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/pic1.jpg" alt="First slide">
+       <div class="carousel-caption d-none d-block">
+    <h1>HUMAN TRAFFICKING</h1>
+    <h5>A National Concern</h5>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+        <br>
+        <br>
+        <h3>What is Human Trafficking?</h3>
+        <p> Human trafficking is defined by the National Human Trafficking Hotline as, “a crime involving the exploitation of someone for the purposes of compelled labor or a commercial sex act through the use of force, fraud, or coercion.”  It is a modern-day form of slavery in which traffickers force their victims to engage in sex acts or labor services against their will.  They use force, fraud or coercion in order to control these vulnerable victims.  Human trafficking has become one of the most serious human rights issues of our time.  It not only affects individuals throughout every corner of the world, it occurs right here in the United States.  It touches every community and affects individuals regardless of age, ethnicity or socio-economic background.  Human trafficking is an estimated $32 billion a year industry and is tied with arms dealing as the second largest criminal industry in the world, drugs still rank as number one.</p>
+        <p>The informative charts provided include data for U.S. human trafficking victims only. The data was collected by the National Human Trafficking Hotline and includes data from cases reported to their hotline only.</p>
+      </div>
+          <hr>
+          <div class="container">
+              <h3>Amount of Human Trafficking Cases in Each State From The Past Six Years</h3>
+              <p>The chart below shows the states that have reported cases of human trafficking.</p> 
+              <p>Choose a year from the dropdown menu to see the chart specific to that year. Hover your mouse over the different states to see how many cases were reported from that state in a year. The states that are red have no human trafficking data reported from them to the National Human Trafficking Hotline.</p>
+              <p>The dropdown menu also filters the data table that prints out each state with reported cases, and the number of cases specific to that state.</p>
+    <form id="form1" onchange="drawRegionsMap()" >
+     
+     <select id="thedropdown">
+     <option value="0">Choose A Year</option>
+     <option value="2012">2012</option>
+     <option value="2013">2013</option>
+     <option value="2014">2014</option>
+     <option value="2015">2015</option>
+     <option value="2016">2016</option>
+     <option value="2017">2017</option>     
+     </select>
+    
+   </form>
+   
+    <div class="container" id="regions_div" style="width: 80%; height: 60%;"></div>
+              <br>
+    <div class="container"><table width="70%"><tbody id="mapanswer"></tbody></table></div><br><br>
+      
+    
+  <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyDybGK5RU02KCuBtaC4Ws280uHZwPekMx8'});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      
+        var origData = [
+          ['State', 'Amount of Trafficking Cases', 'Year'],
+          ['California',  493, 2012 ], 
+          ['Texas',  376, 2012 ], 
+          ['Florida',  237, 2012 ], 
+          ['Ohio',  81, 2012 ], 
+          ['New York',  166, 2012 ], 
+          ['Georgia',  98, 2012 ], 
+          ['Michigan',  69, 2012 ], 
+          ['Illinois',  105, 2012 ], 
+          ['New Jersey',  73, 2012 ], 
+          ['North Carolina',  105, 2012 ], 
+          ['Washington',  89, 2012 ], 
+          ['Nevada',  56, 2012 ], 
+          ['Maryland',  84, 2012 ], 
+          ['Pennsylvania',  91, 2012 ], 
+          ['Virginia',  92, 2012 ], 
+          ['Arizona',  60, 2012 ], 
+          ['Missouri',  48, 2012 ], 
+          ['Colorado',  46, 2012 ], 
+          ['Tennesee',  50, 2012 ], 
+          ['Louisiana',  41, 2012 ], 
+          ['Oklahoma',  42, 2012 ], 
+          ['Massachusetts',  63, 2012 ], 
+          ['Kentucky',  34, 2012 ], 
+          ['DC',  73, 2012 ], 
+          ['Indiana',  51, 2012 ], 
+          ['South Carolina',  32, 2012 ], 
+          ['Oregon',  45, 2012 ], 
+          ['Iowa',  20, 2012 ], 
+          ['Minnesota',  34, 2012 ], 
+          ['Wisconsin',  27, 2012 ], 
+          ['Connecticut',  27, 2012 ], 
+          ['Kansas',  27, 2012 ], 
+          ['Mississippi',  27, 2012 ], 
+          ['Alabama',  27, 2012 ], 
+          ['Arkansas',  17, 2012 ], 
+          ['Nebraska',  11, 2012 ], 
+          ['Utah',  13, 2012 ], 
+          ['New Mexico',  18, 2012 ], 
+          ['Hawaii',  19, 2012 ], 
+          ['Delaware',  5, 2012 ], 
+          ['West Virginia',  6, 2012 ], 
+          ['South Daktota',  3, 2012 ], 
+          ['Maine',  7, 2012 ], 
+          ['North Dakota',  7, 2012 ], 
+          ['Montana',  10, 2012 ], 
+          ['Idaho',  6, 2012 ], 
+          ['Wyoming',  5, 2012 ], 
+          ['Rhode Island',  13, 2012 ], 
+          ['Vermont',  3, 2012 ],
+          //['Alaska', null],
+          //['New Hampshire', null]
+          //2013
+          ['California',  770, 2013 ], 
+          ['Texas',  437, 2013 ], 
+          ['Florida',  371, 2013 ], 
+          ['Ohio',  137, 2013 ], 
+          ['New York',  196, 2013 ], 
+          ['Georgia',  169, 2013 ], 
+          ['Michigan',  117, 2013 ], 
+          ['Illinois',  146, 2013 ], 
+          ['New Jersey',  111, 2013 ], 
+          ['North Carolina',  100, 2013 ], 
+          ['Washington',  133, 2013 ], 
+          ['Nevada',  88, 2013 ], 
+          ['Maryland',  140, 2013 ], 
+          ['Pennsylvania',  124, 2013 ], 
+          ['Virginia',  129, 2013 ], 
+          ['Arizona',  65, 2013 ], 
+          ['Missouri',  78, 2013 ], 
+          ['Colorado',  72, 2013 ], 
+          ['Tennesee',  62, 2013 ], 
+          ['Louisiana',  113, 2013 ], 
+          ['Oklahoma',  66, 2013 ], 
+          ['Massachusetts',  70, 2013 ], 
+          ['Kentucky',  48, 2013 ], 
+          ['DC',  81, 2013 ], 
+          ['Indiana',  57, 2013 ], 
+          ['South Carolina',  50, 2013 ], 
+          ['Oregon',  46, 2013 ], 
+          ['Iowa',  22, 2013 ], 
+          ['Minnesota',  59, 2013 ], 
+          ['Wisconsin',  44, 2013 ], 
+          ['Connecticut',  28, 2013 ], 
+          ['Kansas',  36, 2013 ], 
+          ['Mississippi',  33, 2013 ], 
+          ['Alabama',  47, 2013 ], 
+          ['Arkansas',  26, 2013 ], 
+          ['Nebraska',  19, 2013 ], 
+          ['Utah',  11, 2013 ], 
+          ['New Mexico',  25, 2013 ], 
+          ['Hawaii',  28, 2013 ], 
+          ['Delaware',  9, 2013 ], 
+          ['West Virginia', 14, 2013 ], 
+          ['South Daktota',  10, 2013 ], 
+          ['Maine',  10, 2013 ], 
+          ['North Dakota',  14, 2013 ], 
+          ['Montana',  10, 2013 ], 
+          ['Idaho',  14, 2013 ], 
+          ['Wyoming',  8, 2013 ], 
+          ['Rhode Island',  16, 2013 ], 
+          ['Vermont',  5, 2013 ],
+          //['Alaska', null],
+          //['New Hampshire', null]
+          //2014
+          ['California',  923, 2014 ], 
+          ['Texas',  463, 2014 ], 
+          ['Florida',  360, 2014 ], 
+          ['Ohio',  158, 2014 ], 
+          ['New York',  269, 2014 ], 
+          ['Georgia',  148, 2014 ], 
+          ['Michigan',  135, 2014 ], 
+          ['Illinois',  144, 2014 ], 
+          ['New Jersey',  156, 2014 ], 
+          ['North Carolina',  118, 2014 ], 
+          ['Washington',  128, 2014 ], 
+          ['Nevada',  116, 2014 ], 
+          ['Maryland',  137, 2014 ], 
+          ['Pennsylvania',  109, 2014 ], 
+          ['Virginia',  177, 2014 ], 
+          ['Arizona',  78, 2014 ], 
+          ['Missouri',  58, 2014 ], 
+          ['Colorado',  67, 2014 ], 
+          ['Tennesee',  73, 2014 ], 
+          ['Louisiana',  95, 2014 ], 
+          ['Oklahoma',  64, 2014 ], 
+          ['Massachusetts',  53, 2014 ], 
+          ['Kentucky',  56, 2014 ], 
+          ['DC',  60, 2014 ], 
+          ['Indiana',  50, 2014 ], 
+          ['South Carolina',  54, 2014 ], 
+          ['Oregon',  57, 2014 ], 
+          ['Iowa',  24, 2014 ], 
+          ['Minnesota',  34, 2014 ], 
+          ['Wisconsin',  41, 2014 ], 
+          ['Connecticut',  36, 2014 ], 
+          ['Kansas',  51, 2014 ], 
+          ['Mississippi',  28, 2014 ], 
+          ['Alabama',  36, 2014 ], 
+          ['Arkansas',  21, 2014 ], 
+          ['Nebraska',  11, 2014 ], 
+          ['Utah',  22, 2014 ], 
+          ['New Mexico',  29, 2014 ], 
+          ['Hawaii',  14, 2014 ], 
+          ['Delaware',  6, 2014 ], 
+          ['West Virginia',  8, 2014 ], 
+          ['South Daktota',  6, 2014 ], 
+          ['Maine',  12, 2014 ], 
+          ['North Dakota',  16, 2014 ], 
+          ['Montana',  12, 2014 ], 
+          ['Idaho',  10, 2014 ], 
+          ['Wyoming',  3, 2014 ], 
+          ['Rhode Island',  11, 2014 ], 
+          ['Vermont',  6, 2014 ],
+          //['Alaska', null],
+          //['New Hampshire', null]
+          //2015
+          ['California',  987, 2015 ], 
+          ['Texas',  437, 2015 ], 
+          ['Florida',  410, 2015 ], 
+          ['Ohio',  289, 2015 ], 
+          ['New York',  295, 2015 ], 
+          ['Georgia',  199, 2015 ], 
+          ['Michigan',  151, 2015 ], 
+          ['Illinois',  123, 2015 ], 
+          ['New Jersey',  178, 2015 ], 
+          ['North Carolina',  116, 2015 ], 
+          ['Washington',  130, 2015 ], 
+          ['Nevada',  138, 2015 ], 
+          ['Maryland',  120, 2015 ], 
+          ['Pennsylvania',  111, 2015 ], 
+          ['Virginia',  149, 2015 ], 
+          ['Arizona',  119, 2015 ], 
+          ['Missouri',  69, 2015 ], 
+          ['Colorado',  79, 2015 ], 
+          ['Tennesee',  68, 2015 ], 
+          ['Louisiana',  78, 2015 ], 
+          ['Oklahoma',  43, 2015 ], 
+          ['Massachusetts',  62, 2015 ], 
+          ['Kentucky',  64, 2015 ], 
+          ['DC',  70, 2015 ], 
+          ['Indiana',  54, 2015 ], 
+          ['South Carolina',  62, 2015 ], 
+          ['Oregon',  60, 2015 ], 
+          ['Iowa',  35, 2015 ], 
+          ['Minnesota',  51, 2015 ], 
+          ['Wisconsin',  50, 2015 ], 
+          ['Connecticut',  40, 2015 ], 
+          ['Kansas',  42, 2015 ], 
+          ['Mississippi',  37, 2015 ], 
+          ['Alabama',  54, 2015 ], 
+          ['Arkansas',  35, 2015 ], 
+          ['Nebraska',  22, 2015 ], 
+          ['Utah',  22, 2015 ], 
+          ['New Mexico',  29, 2015 ], 
+          ['Hawaii',  25, 2015 ], 
+          ['Delaware',  6, 2015 ], 
+          ['West Virginia',  10, 2015 ], 
+          ['South Daktota',  14, 2015 ], 
+          ['Maine',  10, 2015 ], 
+          ['North Dakota',  18, 2015 ], 
+          ['Montana',  19, 2015 ], 
+          ['Idaho',  6, 2015 ], 
+          ['Wyoming',  6, 2015 ], 
+          ['Rhode Island',  9, 2015 ], 
+          ['Vermont',  4, 2015 ],
+          //['Alaska', null],
+          //['New Hampshire', null]
+          //2016
+          ['California',  1331, 2016 ], 
+          ['Texas',  665, 2016 ], 
+          ['Florida',  556, 2016 ], 
+          ['Ohio',  373, 2016 ], 
+          ['New York',  332, 2016 ], 
+          ['Georgia',  255, 2016 ], 
+          ['Michigan',  249, 2016 ], 
+          ['Illinois',  202, 2016 ], 
+          ['New Jersey',  195, 2016 ], 
+          ['North Carolina',  182, 2016 ], 
+          ['Washington',  168, 2016 ], 
+          ['Nevada',  167, 2016 ], 
+          ['Maryland',  161, 2016 ], 
+          ['Pennsylvania',  156, 2016 ], 
+          ['Virginia',  152, 2016 ], 
+          ['Arizona',  148, 2016 ], 
+          ['Missouri',  135, 2016 ], 
+          ['Colorado',  122, 2016 ], 
+          ['Tennesee',  110, 2016 ], 
+          ['Louisiana',  108, 2016 ], 
+          ['Oklahoma',  89, 2016 ], 
+          ['Massachusetts',  88, 2016 ], 
+          ['Kentucky',  87, 2016 ], 
+          ['DC',  84, 2016 ], 
+          ['Indiana',  83, 2016 ], 
+          ['South Carolina',  76, 2016 ], 
+          ['Oregon',  76, 2016 ], 
+          ['Iowa',  72, 2016 ], 
+          ['Minnesota',  66, 2016 ], 
+          ['Wisconsin',  65, 2016 ], 
+          ['Connecticut',  55, 2016 ], 
+          ['Kansas',  54, 2016 ], 
+          ['Mississippi',  53, 2016 ], 
+          ['Alabama',  49, 2016 ], 
+          ['Arkansas',  46, 2016 ], 
+          ['Nebraska',  43, 2016 ], 
+          ['Utah',  39, 2016 ], 
+          ['New Mexico',  36, 2016 ], 
+          ['Hawaii',  30, 2016 ], 
+          ['Deleware',  22, 2016 ], 
+          ['West Virginia',  21, 2016 ], 
+          ['South Daktota',  19, 2016 ], 
+          ['Maine',  18, 2016 ], 
+          ['North Dakota',  18, 2016 ], 
+          ['Montana',  15, 2016 ], 
+          ['Idaho',  13, 2016 ], 
+          ['Wyoming',  12, 2016 ], 
+          ['Rhode Island',  8, 2016 ], 
+          ['Vermont',  5, 2016 ],
+          //['Alaska', null],
+          //['New Hampshire', null]
+          //2017
+          ['California',  705, 2017 ], 
+          ['Texas',  433, 2017 ], 
+          ['Florida',  329, 2017 ], 
+          ['Ohio',  191, 2017 ], 
+          ['New York',  180, 2017 ], 
+          ['Georgia',  150, 2017 ], 
+          ['Michigan',  136, 2017 ], 
+          ['Illinois',  100, 2017 ], 
+          ['New Jersey',  83, 2017 ], 
+          ['North Carolina',  118, 2017 ], 
+          ['Washington',  80, 2017 ], 
+          ['Nevada',  94, 2017 ], 
+          ['Maryland',  61, 2017 ], 
+          ['Pennsylvania',  117, 2017 ], 
+          ['Virginia',  83, 2017 ], 
+          ['Arizona',  78, 2017 ], 
+          ['Missouri',  74, 2017 ], 
+          ['Colorado',  59, 2017 ], 
+          ['Tennesee',  54, 2017 ], 
+          ['Louisiana',  59, 2017 ], 
+          ['Oklahoma',  39, 2017 ], 
+          ['Massachusetts',  40, 2017 ], 
+          ['Kentucky',  33, 2017 ], 
+          ['DC',  29, 2017 ], 
+          ['Indiana',  50, 2017 ], 
+          ['South Carolina',  65, 2017 ], 
+          ['Oregon',  33, 2017 ], 
+          ['Iowa',  42, 2017 ], 
+          ['Minnesota',  37, 2017 ], 
+          ['Wisconsin',  47, 2017 ], 
+          ['Connecticut',  28, 2017 ], 
+          ['Kansas',  33, 2017 ], 
+          ['Mississippi',  24, 2017 ], 
+          ['Alabama',  36, 2017 ], 
+          ['Arkansas',  19, 2017 ], 
+          ['Nebraska',  34, 2017 ], 
+          ['Utah',  14, 2017 ], 
+          ['New Mexico',  25, 2017 ], 
+          ['Hawaii',  18, 2017 ], 
+          ['Delaware',  14, 2017 ], 
+          ['West Virginia',  9, 2017 ], 
+          ['South Daktota',  7, 2017 ], 
+          ['Maine',  11, 2017 ], 
+          ['North Dakota',  7, 2017 ], 
+          ['Montana',  13, 2017 ], 
+          ['Idaho',  6, 2017 ], 
+          ['Wyoming',  7, 2017 ], 
+          ['Rhode Island',  7, 2017 ], 
+          ['Vermont',  7, 2017 ]
+          //['Alaska', null],
+          //['New Hampshire', null]
+        ];
+
+      
+        function drawRegionsMap() {
+            
+            var options = {
+                region: 'US', // United States
+                colorAxis: {colors: ['#b7b7b7', 'black']},
+                backgroundColor: 'white',
+                datalessRegionColor: '#8d0d0d',
+                defaultColor: '#f5f5f5',
+                resolution: 'provinces',
+                
+            }
+            
+            selection = document.getElementById("thedropdown").value;
+            document.getElementById("mapanswer").innerHTML = " ";
+            
+            if(selection == "0") {
+                for(i=0; i<origData.length; i++) {
+                    document.getElementById("mapanswer").innerHTML += "<tr><td>" + origData[i][0] + "</td><td>" + origData[i][1] + "</td><td>" + origData[i][2] + "</td></tr>";
+                }
+                var data2 = google.visualization.arrayToDataTable(origData);
+            
+                // var map = new google.visualization.GeoChart(document.getElementById('regions_div'));
+                // map.draw(data2, options);
+                document.getElementById("regions_div").innerHTML = " ";
+            }
+            
+            else { 
+                var newData = [['State', 'Amount of Trafficking Cases', 'Year']];
+                
+                for(i=0; i<origData.length; i++) {
+                    if(origData[i][2] == selection) {
+                        newData.push(origData[i]);
+                    }
+                }
+                document.getElementById("mapanswer").innerHTML = " ";
+        
+        
+                for(i=0; i<newData.length; i++) {
+                    document.getElementById("mapanswer").innerHTML += "<tr><td>" + newData[i][0] + "</td><td>" + newData[i][1] + "</td></tr>";
+                }
+     
+                var data = google.visualization.arrayToDataTable(newData);
+                var map = new google.visualization.GeoChart(document.getElementById('regions_div'));
+                map.draw(data, options);
+       
+             }
+          
+            }
+      
+    </script>
+    </div>
+      </section>
+      
+      <!-- Types of Trafficking Section -->
+    <section class="type" id="type">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/pic5.jpg" alt="First slide">
+       <div class="carousel-caption d-none d-block">
+    <h1>TYPES OF TRAFFICKING</h1>
+    </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+      <div class="container">
+      <h3>Sex Trafficking</h3>
+      <p>Sex trafficking is “the recruitment, harboring, transportation, provision, obtaining, patronizing, or soliciting of a person for the purposes of a commercial sex act, in which the commercial sex act is induced by force, fraud, or coercion, or in which the person induced to perform such an act has not attained 18 years of age (22 USC § 7102).”</p>
+
+<h3>Labor Trafficking</h3>
+<p>Labor trafficking is “the recruitment, harboring, transportation, provision, or obtaining of a person for labor or services, through the use of force, fraud, or coercion for the purposes of subjection to involuntary servitude, peonage, debt bondage, or slavery, (22 USC § 7102).”</p>
+        </div>
+        <hr>
+      <div class="container">
+          <h3>Comparison of the Types of Trafficking</h3>
+              <p>The chart below shows the percentage of total cases that were reported to the National Human Trafficking Hotline that were classified as sex trafficking, labor trafficking, sex and labor trafficking, or not specified trafficking.</p> 
+              <p>Choose a year from the dropdown menu to see the chart specific to that year. Hover your mouse over the different colors to see how many cases were reported that were classified as that type of trafficking that year.</p>
+              
+<form  action="#" id="form2" name="form2" onchange="drawChart2()" >
+     
+    <select id="thedropdown2">
+     <option value="0">Choose a Year</option>
+     <option value="2012">2012</option>
+     <option value="2013">2013</option>
+     <option value="2014">2014</option>
+     <option value="2015">2015</option>
+     <option value="2016">2016</option>
+     <option value="2017">2017</option>
+    </select>  
+</form>
+     <script>google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart2);
+      
+        function drawChart2() {
+        
+          var data = [
+          ['Type', 'Amount', 'Year'],
+          //fake news
+          ['Sex Trafficking',  2382, 2011],
+          ['Labor Trafficking',  627, 2011],
+          ['Not Specified',  206, 2011],
+          ['Sex & Labor Trafficking',  57, 2011], 
+              //2012
+          ['Sex Trafficking',  2382, 2012],
+          ['Labor Trafficking',  627, 2012],
+          ['Not Specified',  206, 2012],
+          ['Sex & Labor Trafficking',  57, 2012],
+            //2013
+          ['Sex Trafficking',  3380, 2013],
+          ['Labor Trafficking',  856, 2013],
+          ['Not Specified',  498, 2013],
+          ['Sex & Labor Trafficking',  120, 2013],
+            //2014
+          ['Sex Trafficking',  3593, 2014],
+          ['Labor Trafficking',  815, 2014],
+          ['Not Specified',  452, 2014],
+          ['Sex & Labor Trafficking',  181, 2014],
+            //2015
+          ['Sex Trafficking',  4183, 2015],
+          ['Labor Trafficking',  728, 2015],
+          ['Not Specified',  492, 2015],
+          ['Sex & Labor Trafficking',  172, 2015],
+            //2016
+          ['Sex Trafficking',  5593, 2016],
+          ['Labor Trafficking',  1064, 2016],
+          ['Not Specified',  692, 2016],
+          ['Sex & Labor Trafficking',  272, 2016],
+            //2017
+          ['Sex Trafficking',  3186, 2017],
+          ['Labor Trafficking',  689, 2017],
+          ['Not Specified',  411, 2017],
+          ['Sex & Labor Trafficking',  174, 2017]
+        ];
+ 
+          year = document.getElementById("thedropdown2").value;
+          
+            for(i=1; i<data.length; i++) {
+              if(year == data[i][2]) {
+                  
+                  var sex = data[i-3][1];
+                  var labor = data[i-2][1];
+                  var not = data[i-1][1];
+                  var both = data[i][1];
+              }
+            
+          }
+            
+        var data2 = google.visualization.arrayToDataTable([
+            ['Type', 'Amount'],
+            ['Sex Trafficking', sex],
+            ['Labor Trafficking', labor],
+            ['Not Specified', not],
+            ['Sex & Labor Trafficking', both]
+        ]);    
+            
+        var options2 = {
+          pieHole: 0.4,
+          slices: {0:{color: 'black'}, 1:{color: '#b7b7b7'}, 2:{color: '#585451'}, 3:{color: '#eee'}}
+        };
+            
+         var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart2.draw(data2, options2);     
+      }
+    </script>     
+     <div id="donutchart" style="width: 900px; height: 500px;"></div>     
+        </div>
+    </section>
+<!-- History Section -->
+      <section class="history" id="history">
+ <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/pic9.jpg" alt="First slide">
+       <div class="carousel-caption d-none d-block">
+    <p></p>
+    </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+   
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+        <div class="row">
+          <div class="col-lg-12 ml-auto">
+             <p><iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1TOj-qoGFNEMreq5jzk4Zmu8spPxaO0jTaFdoJf7afLI&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe></p>
+          </div>
+              </div>
+            </div>
+          </div>
+       </div>
+    </section>
+      <!-- Victim Section -->
+      <section class="victims" id="victims">
+       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/pic11.jpeg" alt="First slide">
+       <div class="carousel-caption d-none d-block">
+    <h1>TESTIMONIES</h1>
+    </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+    <div class="container">
+<h3>Cyntoia Brown</h3>
+        <p>Cyntoia Brown is currently serving a life sentence due to protecting herself against her sexual abuser. When Brown was only 16 years old, she was forced into prostitution by an older male. Her day to day life consisted of being beat on and raped while under the control of her pimp. This month, the enraging case of Brown resurfaced over the internet causing people of all backgrounds to speak out against the injustice she was served. In this video, you will be informed on the many details of her lengthy case. </p>
+         <p>We as a society need to work on bringing justice and rehabilitation to the respective victims, while punishing the oppressors. Feel encouraged to start conversation in your area using #FreeCyntoiaBrown through your social media. </p>   
+        <p align="center"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fajplusenglish%2Fvideos%2F1089663894508450%2F&show_text=0&width=560" width="880" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe></p>
+      <br>
+        <br>
+        <br>
+<h3>Shelia Fedrick</h3>
+        <p>A flight attendant was able to save the life of a young trafficking victim while flying mid-air. Shelia Fedrick of Alaska Airlines noticed the alarming difference between an older gentlemen who was dressed nice and a young girl who was underdressed and very rough looking. Fedrick was able to get the girl to the bathroom where she left a note asking if she was in danger. The young girl actually wrote back that she needed help, and the flight attendant took action of informing the pilot, who called the police for their next landing. Fedrick's advice to all is always be aware of what is going on around you. If you see something, say something. </p>
+<p align="center"><iframe src="https://www.nbcnews.com/widget/video-embed/871305795537" scrolling="no" width="880" height="500" frameborder="0" allowfullscreen="true" style="border:none;overflow:hidden"></iframe></p><br>
+      </div>
+</section>
+        
+<!-- Portfolio Grid Section -->
+    <section class="signs" id="signs">
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/pic12.jpg" alt="First slide">
+       <div class="carousel-caption d-none d-block">
+    <h1 id="textback">WARNING SIGNS</h1>
+    </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+      <div class="container">
+      <h3> Common Work and Living Conditions</h3>
+      <p>
+•  Is not free to leave or come and go as he/she wishes
+<br>
+• Is in the commercial sex industry and has a pimp / manager
+<br>
+• Is unpaid, paid very little, or paid only through tips
+<br>
+• Works excessively long and/or unusual hours
+<br>
+• Is not allowed breaks or suffers under unusual restrictions at work
+<br>
+• Owes a large debt and is unable to pay it off
+<br>
+• Was recruited through false promises concerning the nature and conditions of his/her work
+<br>
+• High security measures exist in the work and/or living locations (e.g. opaque windows, boarded up windows, bars on windows, barbed wire, security cameras, etc.)
+<br>
+</p>
+
+<h3>Poor Mental Health or Abnormal Behavior</h3>
+<p>
+•  Is fearful, anxious, depressed, submissive, tense, or nervous/paranoid
+<br>
+• Exhibits unusually fearful or anxious behavior after bringing up law enforcement
+<br>
+• Avoids eye contact
+<br>
+</p>
+
+<h3>Poor Physical Health</h3>
+<p>
+• Lacks medical care and/or is denied medical services by employer
+<br>
+• Appears malnourished or shows signs of repeated exposure to harmful chemicals
+<br>
+• Shows signs of physical and/or sexual abuse, physical restraint, confinement, or torture.
+<br>
+</p>
+
+<h3>Lack of Control</h3>
+<p>
+• Has few or no personal possessions
+<br>
+• Is not in control of his/her own money, no financial records, or bank account
+<br>
+• Is not in control of his/her own identification documents (ID or passport)
+<br>
+• Is not allowed or able to speak for themselves (a third party may insist on being present and/or translating)
+<br>
+</p>
+
+<h3>Other Signs</h3>
+<p>
+•  Claims of just visiting and inability to clarify where he/she is staying/address
+<br>
+• Lack of knowledge of whereabouts and/or of what city he/she is in
+<br>
+• Loss of sense of time
+<br>
+• Has numerous inconsistencies in his/her story
+<br>
+</p>
+        </div>
+        <hr>
+        <div class="container">
+
+<h4><strong>If you believe you are a victim of human trafficking or may have information about a potential trafficking situation, please contact the National Human Trafficking Hotline 1-888-373-7888. If you or someone you know is in immediate danger, please call 911.</strong>
+</h4>
+      </div>
+        <hr>
+        <div class="container">
+        <small><p>Content sources: https://humantraffickinghotline.org/type-trafficking/sex-trafficking <br>
+http://www.heuni.fi/material/attachments/heuni/projects/wmPiHN4hb/Trafficking_in_Persons_and_Gender.pdf <br>
+http://hankeringforhistory.com/the-history-of-human-trafficking/</p>
+            <p>Picture sources: https://highwaymail.co.za/271272/unite-and-support-anti-human-trafficking-walk/ <br>
+http://www.gospelherald.com/articles/50296/20140131/dark-side-super-bowl-largest-human-trafficking-event-u-s.htm <br>
+http://dioriosereni.com/human-trafficking-victims-are-not-prostitutes/</p>
+            <p>Video sources: https://www.facebook.com/pg/ajplusenglish/videos/?ref=page_internal <br> https://www.nbcnews.com/widget/video-embed/871305795537</p></small></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+
+    <div class="copyright text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; HUMAN TRAFFICKING</small>
+          <p>Brittany Beck, Asia Daggs, <a href="https://mollyljohnson.com" target="_blank">Molly Johnson</a>, Rachel Smith</p>
+      </div>
+    </div>
+    </footer>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
